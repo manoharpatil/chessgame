@@ -1,6 +1,6 @@
-package com.whitehatgaming
+package com.gaming
 
-import com.whitehatgaming.ChessGame.Move
+import com.gaming.ChessGame.Move
 
 import java.io.{FileReader, IOException, LineNumberReader}
 

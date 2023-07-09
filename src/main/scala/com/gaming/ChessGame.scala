@@ -1,4 +1,4 @@
-package com.whitehatgaming
+package com.gaming
 
 object ChessGame {
   type Move = (Int, Int, Int, Int) // (startX, startY, endX, endY)
@@ -47,16 +47,21 @@ object ChessGame {
         val dx = math.abs(endX - startX)
         val dy = math.abs(endY - startY)
         (dx == 1 && dy == 0) || (dx == 0 && dy == 1) || (dx == 1 && dy == 1)
+
       case Bishop(_) =>
         math.abs(endX - startX) == math.abs(endY - startY)
+
       case Rook(_) =>
         startX == endX || startY == endY
+
       case Queen(_) =>
         math.abs(endX - startX) == math.abs(endY - startY) || startX == endX || startY == endY
+
       case Knight(_) =>
         val dx = math.abs(endX - startX)
         val dy = math.abs(endY - startY)
         (dx == 1 && dy == 2) || (dx == 2 && dy == 1)
+
       case pawn: Pawn =>
         val dy = endY - startY
         if (math.abs(dy) == 2 && !pawn.moved) {
@@ -80,6 +85,7 @@ object ChessGame {
         } else {
           false
         }
+
       case _ => false // Invalid piece type
     }
   }

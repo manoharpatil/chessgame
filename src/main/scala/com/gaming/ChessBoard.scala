@@ -1,4 +1,4 @@
-package com.whitehatgaming
+package com.gaming
 
 class ChessBoard {
   private val board: Array[Array[ChessPiece]] = Array.ofDim[ChessPiece](8, 8)
